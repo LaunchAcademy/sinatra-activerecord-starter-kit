@@ -1,0 +1,26 @@
+# Configure the database used when in the development environment
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: <YOUR_APP_NAME>_development
+  pool: 5
+  username:
+  password:
+
+# Configure the database used when in the test environment
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: <YOUR_APP_NAME>_test
+  pool: 5
+  username:
+  password:
+
+# Configure the database used when in the production environment
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: <YOUR_APP_NAME>_production
+  pool: 5
+  username:
+  password:
