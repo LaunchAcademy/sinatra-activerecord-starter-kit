@@ -47,3 +47,13 @@ rake db:seed              # load the seed data from db/seeds.rb
 rake db:setup             # create the database and load the schema
 rake db:test:prepare      # Prepare test database from development schema
 ```
+
+## Pushing to Github
+
+Since your app  started as being a clone of this repository, you will
+need to change your `origin` remote to point to your own Github repo before you
+will be able to `push`. You can do this by using the `set-url` command.
+
+```no-highlight
+git remote set-url origin git@github.com:<YOUR_USERNAME>/<YOUR_REPO>.git
+```
