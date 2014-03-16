@@ -1,6 +1,6 @@
 # Sinatra Active Record Starter Kit
 
-This template provides a basic [sinatra](http://www.sinatrarb.com/) application
+This template provides a basic [Sinatra](http://www.sinatrarb.com/) application
 that includes:
 
 - [Active Record](http://guides.rubyonrails.org/active_record_querying.html)
