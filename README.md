@@ -18,7 +18,7 @@ git clone git@github.com:LaunchAcademy/sinatra-activerecord-starter-kit.git <YOU
 # Move into your app's directory
 cd <YOUR_APP_NAME>
 
-# Remove the git history from this app
+# Remove the git history and init a new git repo
 rm -rf .git && git init
 
 # Install all the gems
