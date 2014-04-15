@@ -13,10 +13,13 @@ using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 
 ```no-highlight
 # Clone down this template
-git clone --depth 1 git@github.com:LaunchAcademy/sinatra-activerecord-starter-kit.git <YOUR_APP_NAME>
+git clone git@github.com:LaunchAcademy/sinatra-activerecord-starter-kit.git <YOUR_APP_NAME>
 
 # Move into your app's directory
 cd <YOUR_APP_NAME>
+
+# Remove the git history from this app
+rm -rf .git && git init
 
 # Install all the gems
 bundle install
@@ -46,14 +49,4 @@ rake db:schema:load       # load schema into database
 rake db:seed              # load the seed data from db/seeds.rb
 rake db:setup             # create the database and load the schema
 rake db:test:prepare      # Prepare test database from development schema
-```
-
-## Pushing to Github
-
-Since your app  started as being a clone of this repository, you will
-need to change your `origin` remote to point to your own Github repo before you
-will be able to `push`. You can do this by using the `set-url` command.
-
-```no-highlight
-git remote set-url origin git@github.com:<YOUR_USERNAME>/<YOUR_REPO>.git
 ```
