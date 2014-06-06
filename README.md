@@ -28,7 +28,7 @@ bundle install
 
 ### Configuring Your Database
 
-This template is set up for using a PostgreSQL database. You will need create a
+This template is set up for using a PostgreSQL database. You will need to create a
 `config/database.yml`. There is an example at `config/database.example.yml`.
 
 Once you've created a `config/database.yml`, you can create your database with
