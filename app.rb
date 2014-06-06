@@ -1,5 +1,5 @@
 require 'sinatra'
-require "sinatra/activerecord"
+require 'sinatra/activerecord'
 
 configure do
   set :views, 'app/views'
