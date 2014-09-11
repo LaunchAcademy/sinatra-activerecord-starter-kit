@@ -19,11 +19,11 @@ git clone git@github.com:LaunchAcademy/sinatra-activerecord-starter-kit.git <YOU
 # Move into your app's directory
 cd <YOUR_APP_NAME>
 
-# Remove the old git history and start your own
-rm -rf .git && git init && git add -A && git commit -m 'Initial commit'
-
 # Install all the gems
 bundle install
+
+# Remove the old git history and start your own
+rm -rf .git && git init && git add -A && git commit -m 'Initial commit'
 ```
 
 ### Configuring Your Database
