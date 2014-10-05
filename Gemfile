@@ -6,7 +6,7 @@ gem 'pg'
 gem 'rake'
 
 group :test, :development do
+  gem 'capybara'
   gem 'pry'
   gem 'rspec'
-  gem 'capybara'
 end

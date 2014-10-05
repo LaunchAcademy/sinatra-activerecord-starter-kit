@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
+configure :development, :test do
+  require 'pry'
+end
+
 configure do
   set :views, 'app/views'
 end
