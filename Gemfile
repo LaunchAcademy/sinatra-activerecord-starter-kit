@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'sinatra-activerecord'
 gem 'pg'
 gem 'rake'
+gem 'sinatra'
+gem 'sinatra-activerecord'
+gem 'sinatra-contrib'
 
 group :test, :development do
   gem 'capybara'
