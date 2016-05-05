@@ -4,6 +4,7 @@ require 'sinatra/reloader'
 
 configure :development, :test do
   require 'pry'
+  require 'faker'
 end
 
 configure do
