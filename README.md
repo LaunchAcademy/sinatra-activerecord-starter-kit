@@ -11,6 +11,7 @@ using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 - [RSpec](https://github.com/rspec/rspec) for unit testing
 - [Capybara](https://github.com/jnicklas/capybara) for acceptance testing
 - [Pry](https://github.com/pry/pry) for debugging
+- [Faker](https://github.com/stympy/faker) for generating fake info in tests
 
 ## Getting Started
 
