@@ -59,7 +59,7 @@ rake db:test:prepare      # Prepare test database from development schema
 
 Uses [Sinatra Flash](https://github.com/SFEley/sinatra-flash)
 
-Flash messages allow you to send information across page redirects. However, only short messages may be sent. Long messages or large objects tend to result in the Flash messages being cleared. In the layout page, a placeholder for `flash[:notice]` has already been added.
+Flash messages allow you to send information across page redirects. However, only short messages may be sent. Long messages or large objects tend to result in the Flash messages being cleared. In the `/app/views/layout.erb`, a message box for `flash[:notice]` has already been added.
 
 **Example:**
 ```ruby
@@ -90,7 +90,7 @@ end
 
 ## Shoulda Matchers
 
-Uses [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) to more easily test model associations (e.g., )
+Uses [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
 
 Shoulda Matchers allow for easier testing of Model associations in your unit tests using RSpec.
 
@@ -103,8 +103,8 @@ require 'spec_helper'
 # In this example, a user can have many books,
 # but may only belong to a single library.
 describe User do
-  it { should have_many :books }
   it { should belong_to :library }
+  it { should have_many :books }
 end
 
 ```
@@ -113,6 +113,7 @@ end
 # /app/models/user.rb
 
 class User < ActiveRecord::Base
+  # Note the difference in "belongs_to" here vs. "belong_to" in the spec test.
   belongs_to :library
   has_many :books
 end
