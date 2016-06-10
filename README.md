@@ -6,14 +6,12 @@ that includes:
 - [Active Record](http://guides.rubyonrails.org/active_record_querying.html)
 using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 - [PostgreSQL](http://www.postgresql.org/) for a database
-- [Sinatra Flash](https://github.com/SFEley/sinatra-flash) to easily show messages to the user (`flash[:notice] = "Flash message to the user!"`)
 - [Sinatra::Reloader](http://www.sinatrarb.com/contrib/reloader.html) to
   automatically reload modified files during development
 - [RSpec](https://github.com/rspec/rspec) for unit testing
 - [Capybara](https://github.com/jnicklas/capybara) for acceptance testing
 - [Pry](https://github.com/pry/pry) for debugging
-- [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) to more easily test model associations (e.g., `it { should belong_to :user }`)
-- [Valid Attribute](https://github.com/bcardarella/valid_attribute) to more easily test model attributes (e.g., `it { should have_valid(:username).when("valid_username") }`)
+
 
 ## Getting Started
 
@@ -55,4 +53,94 @@ rake db:schema:load       # load schema into database
 rake db:seed              # load the seed data from db/seeds.rb
 rake db:setup             # create the database and load the schema
 rake db:test:prepare      # Prepare test database from development schema
+```
+
+## Flash Notices
+
+Uses [Sinatra Flash](https://github.com/SFEley/sinatra-flash)
+
+Flash messages allow you to send information across page redirects. However, only short messages may be sent. Long messages or large objects tend to result in the Flash messages being cleared. In the layout page, a placeholder for `flash[:notice]` has already been added.
+
+**Example:**
+```ruby
+# app.rb
+
+post '/books' do
+  # do some logic like save something to the database
+  flash[:notice] = "Your book was saved!"
+
+  redirect '/books/all'
+end
+
+get '/books/all' do
+  # Some code or logic to get all books
+
+  erb :'books/index'
+  # Flash message will appear on this page
+end
+
+# HEADS UP - flash does not work if returning a view
+get '/books/all' do
+  flash[:notice] = "This will not appear on the page."
+
+  erb :'/books/index'
+  # No flash message will appear until you navigate to a new page or the page refreshes.
+end
+```
+
+## Shoulda Matchers
+
+Uses [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) to more easily test model associations (e.g., )
+
+Shoulda Matchers allow for easier testing of Model associations in your unit tests using RSpec.
+
+**Example:**
+
+```ruby
+# /spec/models/user_spec.rb
+
+require 'spec_helper'
+# In this example, a user can have many books,
+# but may only belong to a single library.
+describe User do
+  it { should have_many :books }
+  it { should belong_to :library }
+end
+
+```
+
+```ruby
+# /app/models/user.rb
+
+class User < ActiveRecord::Base
+  belongs_to :library
+  has_many :books
+end
+```
+
+## Valid Attribute
+
+Uses [Valid Attribute](https://github.com/bcardarella/valid_attribute)
+
+Valid Attribute allows for the rapid development of tests for validations
+in your models.
+
+**Example:**
+
+```ruby
+# /spec/models/user_spec.rb
+
+describe User do
+  it { should have_valid(:username).when("valid_username", "another_valid_username") }
+  it { should_not have_valid(:username).when('', nil) }
+end
+
+```
+
+```ruby
+# /app/models/user.rb
+
+class User < ActiveRecord::Base
+  validates :username, presence: true
+end
 ```
