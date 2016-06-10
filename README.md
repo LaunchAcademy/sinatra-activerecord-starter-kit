@@ -6,11 +6,14 @@ that includes:
 - [Active Record](http://guides.rubyonrails.org/active_record_querying.html)
 using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 - [PostgreSQL](http://www.postgresql.org/) for a database
+- [Sinatra Flash](https://github.com/SFEley/sinatra-flash) to easily show messages to the user (`flash[:notice] = "Flash message to the user!"`)
 - [Sinatra::Reloader](http://www.sinatrarb.com/contrib/reloader.html) to
   automatically reload modified files during development
 - [RSpec](https://github.com/rspec/rspec) for unit testing
 - [Capybara](https://github.com/jnicklas/capybara) for acceptance testing
 - [Pry](https://github.com/pry/pry) for debugging
+- [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) to more easily test model associations (e.g., `it { should belong_to :user }`)
+- [Valid Attribute](https://github.com/bcardarella/valid_attribute) to more easily test model attributes (e.g., `it { should have_valid(:username).when("valid_username") }`)
 
 ## Getting Started
 
