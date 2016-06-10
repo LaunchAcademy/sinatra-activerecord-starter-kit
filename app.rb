@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
+require 'sinatra/flash'
+
 
 configure :development, :test do
   require 'pry'
