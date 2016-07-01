@@ -55,6 +55,10 @@ rake db:setup             # create the database and load the schema
 rake db:test:prepare      # Prepare test database from development schema
 ```
 
+If you are having trouble with any of these commands, try prefixing them with `bundle exec`.
+
+[Source](http://bundler.io/)
+
 ## Flash Notices
 
 Uses [Sinatra Flash](https://github.com/SFEley/sinatra-flash)
