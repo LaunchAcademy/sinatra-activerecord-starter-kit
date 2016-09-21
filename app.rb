@@ -5,6 +5,8 @@ require 'sinatra/flash'
 
 enable :sessions
 
+set :bind, '0.0.0.0'  # bind to all interfaces
+
 configure :development, :test do
   require 'pry'
 end
