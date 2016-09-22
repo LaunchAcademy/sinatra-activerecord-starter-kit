@@ -17,7 +17,7 @@ using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 
 ```no-highlight
 # Clone down this template
-git clone git@github.com:LaunchAcademy/sinatra-activerecord-starter-kit.git <YOUR_APP_NAME>
+git clone https://github.com/LaunchAcademy/sinatra-activerecord-starter-kit.git <YOUR_APP_NAME>
 
 # Move into your app's directory
 cd <YOUR_APP_NAME>
