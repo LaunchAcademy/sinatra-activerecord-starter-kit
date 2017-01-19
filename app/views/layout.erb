@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/stylesheets/app.css" />
   </head>
   <body>
-    
+
     <% if flash.any? %>
-      <div class="flash">
-        <div class="container">
-          <%= flash[:notice] %>
+      <% flash.each |type, message| %>
+        <div class="flash flash-#{type}">
+          <%= message %>
         </div>
-      </div>
+      <% end %>
     <% end %>
 
     <%= yield %>
