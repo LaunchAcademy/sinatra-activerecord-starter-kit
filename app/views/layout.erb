@@ -10,7 +10,7 @@
 
     <% if flash.any? %>
       <% flash.each |type, message| %>
-        <div class="flash flash-#{type}">
+        <div class="flash flash-<%= type %>">
           <%= message %>
         </div>
       <% end %>
