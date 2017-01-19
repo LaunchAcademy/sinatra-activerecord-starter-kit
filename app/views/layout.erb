@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/stylesheets/app.css" />
   </head>
   <body>
+
+    <% if flash.any? %>
+      <% flash.each |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+
     <%= yield %>
 
     <script src="/javascripts/app.js"></script>
