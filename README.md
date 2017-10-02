@@ -27,15 +27,20 @@ bundle install
 
 # Remove the old git history and start your own
 rm -rf .git && git init && git add -A && git commit -m 'Initial commit'
+
+# Copy the example database.yml file over to its intended destination
+cp config/database.example.yml config/database.yml
+
+# Once you've edit the database.yml file as needed, you can create the database
+rake db:create
 ```
 
 ### Configuring Your Database
 
-This template is set up for using a PostgreSQL database. You will need to create a
-`config/database.yml`. There is an example at `config/database.example.yml`.
+Note the last two steps above. This template is set up for using a PostgreSQL database. You will need to create a
+`config/database.yml` for the application to connect to the database successfully. 
 
-Once you've created a `config/database.yml`, you can create your database with
-`rake db:create`.
+Once you've created and configured the `config/database.yml` file, you can create the database with the `rake db:create` command.
 
 ## Rake Tasks
 
