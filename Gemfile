@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "activerecord", "~> 4.1"
-gem "pg"
+gem "pg", "~> 0.21"
 gem "rake"
 gem "sinatra", "~> 1.4"
 gem "sinatra-activerecord", "~> 2.0"
